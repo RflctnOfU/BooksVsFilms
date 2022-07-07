@@ -26,7 +26,7 @@ let displayImg = function (image) {
             console.log(response)
             let image = document.createElement('img');
             image.setAttribute('src', response.url)
-            body.append(image);
+            body.prepend(image);
             // response.json()
             // .then(function (data) {
             //     console.log(data);
