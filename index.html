@@ -17,10 +17,10 @@
         <section class="hero">
             <div class="hero-body">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column" id="image-col">
                         <img id="hero-logo" src="./assets/images/book-vs-movie-logo.png" alt="">
                     </div>
-                    <div class="column">
+                    <div class="column" id="text-col">
                         <h1 class="title" id="hero-title">
                             BOOKS VS MOVIES
                         </h1>
@@ -36,14 +36,10 @@
     <main>
         <section class="section">
             <div class="field has-addons" id="search-bar">
-                <p class="control" id="search-bar-input">
-                    <input type="text" class="input" placeholder="Search book and movie titles...">
-                </p>
-                <p class="control" id="search-button">
-                    <a href="" class="button is-info">
-                        <img src="./assets/images/search-icon.png" alt="" id="search-icon">
-                    </a>
-                </p>
+                <input type="text" class="input control" id="search-bar-input" placeholder="Search book and movie titles...">
+                <button type="submit" id="search-button">
+                    <img src="./assets/images/search-icon.png" alt="magnifying glass icon" id="search-icon">
+                </button>
             </div>
         </section>
     </main>
@@ -51,7 +47,7 @@
     <footer class="footer">
         <div class="content footer-text">
             <p>
-                © 2022 Snug Squad Solutions 
+                © 2022 Snug Squad Solutions
                 <!-- icon/image goes here -->
             </p>
         </div>
