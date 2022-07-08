@@ -1,63 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books vs Movies</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.typekit.net/owb3apo.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
 </head>
-
 <body>
-    <header>
-
-        <section class="hero">
-            <div class="hero-body">
-                <div class="columns">
-                    <div class="column">
-                        <img id="hero-logo" src="./assets/images/book-vs-movie-logo.png" alt="">
-                    </div>
-                    <div class="column">
-                        <h1 class="title" id="hero-title">
-                            BOOKS VS MOVIES
-                        </h1>
-                        <h2 class="subtitle" id="hero-subtitle">
-                            Which adaptation reigns supreme?
-                        </h2>
-                    </div>
-                </div>
+    
+   <section>
+        <div id="modal-js-example" class="modal">
+            <div class="modal-background"></div>
+      
+            <div class="modal-content">
+            <div class="box $modal-card-body-background-color">
+                <p>Dispaying results for: <span id="title-search"></span></p>
+                <div id="title-container" class="title-list"></div>          
             </div>
-        </section>
-    </header>
-
-    <main>
-        <section class="section">
-            <div class="field has-addons" id="search-bar">
-                <p class="control" id="search-bar-input">
-                    <input type="text" class="input" placeholder="Search book and movie titles...">
-                </p>
-                <p class="control" id="search-button">
-                    <a href="" class="button is-info">
-                        <img src="./assets/images/search-icon.png" alt="" id="search-icon">
-                    </a>
-                </p>
             </div>
-        </section>
-    </main>
+            <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+    </section> 
 
-    <footer class="footer">
-        <div class="content footer-text">
+    <button class="js-modal-trigger search-btn" data-target="modal-js-example">
+        Search
+    </button>
+    <footer class="footer has-background-black" style=" border: solid 2px #ba5e08; border-radius: 10px; box-shadow: 0 0 10px 5px #ba5e08;">
+        <div class="content has-text-centered" style="color: #47e6fb; font-size: 1.5rem;">
             <p>
-                © 2022 Snug Squad Solutions 
-                <!-- icon/image goes here -->
+                Snug Squad Solutions ©2022 <!-- icon/image goes here -->
+
             </p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
-</body>
 
+</body>
 </html>
