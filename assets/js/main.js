@@ -56,10 +56,10 @@ box.setAttribute('style', 'background-color: black');
 // let coverImg = $('#cover')
 let imgUrl;
 let posterUrl;
-let bookTitle;
-let bookPub;
-let movieTitle;
-let movieRelease;
+let bookTitle = ''
+let bookPub = ''
+let movieTitle = ''
+let movieRelease = ''
 let posterImg = $('#poster')
 
 let searchQuery = $('#search-bar-input')
@@ -106,6 +106,7 @@ let displayCover = function (image) {
     createDisplay();
     bookTitle = image.docs[0].title;
     bookPub = image.docs[0].first_publish_year;
+
 }
 
 let displayPoster = function (poster) {
@@ -115,6 +116,7 @@ let displayPoster = function (poster) {
 }
 
 let createDisplay = function () {
+    console.log(bookTitle);
     let card = document.createElement('div');
     card.setAttribute('class', 'card');
     card.setAttribute('id', 'book');
@@ -128,7 +130,25 @@ let createDisplay = function () {
     bookCover.setAttribute('src', imgUrl);
     figure.append(bookCover);
     cardImage.append(figure);
-    card.append(cardImage);
+    let cardContent = document.createElement('div');
+    cardContent.setAttribute('class', 'card-content');
+    cardContent.setAttribute('style', 'color: white');
+    let content = document.createElement('div');
+    content.setAttribute('class', 'content');
+    let titleH2A = document.createElement('h2');
+    titleH2A.setAttribute('class', 'is-size-4')
+    titleH2A.setAttribute('id', 'bookTitle');
+    titleH2A.textContent = "Title: " + bookTitle;
+    let titleH2B = document.createElement('h2');
+    titleH2B.setAttribute('class', 'is-size-5');
+    titleH2B.setAttribute('id', 'releaseDate');
+    titleH2B.textContent = "Published: " + bookPub;
+    content.append(titleH2A, titleH2B);
+    cardContent.append(content);
+    card.append(cardImage, cardContent);
+
+
+
     box.append(card);
     let card1 = document.createElement('div');
     card1.setAttribute('class', 'card');
