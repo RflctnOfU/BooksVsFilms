@@ -78,7 +78,7 @@ let createDisplay = function () {
 
     //book cover div
     let cover = document.createElement('div');
-    cover.setAttribute('coverImg');
+    cover.setAttribute('class', 'coverImg ');
 
     //book thumbs-up
     let bookUp = document.createElement('button');
@@ -107,12 +107,12 @@ let createDisplay = function () {
 
     //title div
     let bookTitleDiv = document.createElement('div');
-    bookTitleDiv.setAttribute('class', 'bookTitle');
-    bookTitleDiv.textContent = bookTitle;
+    bookTitleDiv.setAttribute('class', 'bookTitle has-text-centered is-size-3 has-text-weight-semibold');
+    bookTitleDiv.textContent = localStorage.getItem('bookTitle');
 
     let bookPubDiv = document.createElement('div');
-    bookPubDiv.setAttribute('class', 'bookPub');
-    bookPubDiv.textContent = bookPub;
+    bookPubDiv.setAttribute('class', 'bookPub has-text-centered');
+    bookPubDiv.textContent = 'Published: ' + localStorage.getItem('bookPub');
 
     book.append(cover, bookTitleDiv, bookPubDiv);
 
@@ -134,11 +134,11 @@ let createDisplay = function () {
 
     //movie div
     let movie = document.createElement('div');
-    movie.setAttribute('class', 'column is-5 dynamic-col');
+    movie.setAttribute('class', 'column is-5 dynamic-col is-flex-justify-content');
 
     //movie cover div
     let poster = document.createElement('div');
-    poster.setAttribute('posterImg');
+    poster.setAttribute('class', 'posterImg');
 
     //movie thumbs-up
     let movieUp = document.createElement('button');
@@ -157,7 +157,7 @@ let createDisplay = function () {
 
     //book cover
     let moviePoster = document.createElement('img');
-    moviePoster.setAttribute('src', imgUrl)
+    moviePoster.setAttribute('src', posterUrl)
     moviePoster.setAttribute('alt', 'Movie Poster');
 
     movieUp.append(thumbsUpMovie);
@@ -166,12 +166,12 @@ let createDisplay = function () {
 
     //title div
     let movieTitleDiv = document.createElement('div');
-    movieTitleDiv.setAttribute('class', 'movieTitle');
-    movieTitleDiv.textContent = movieTitle;
+    movieTitleDiv.setAttribute('class', 'movieTitle has-text-centered is-size-3 has-text-weight-semibold');
+    movieTitleDiv.textContent = localStorage.getItem('movieTitle');
 
     let movieReleaseDiv = document.createElement('div');
-    movieReleaseDiv.setAttribute('class', 'bookPub');
-    movieReleaseDiv.textContent = movieRelease;
+    movieReleaseDiv.setAttribute('class', 'movieRelease has-text-centered');
+    movieReleaseDiv.textContent = 'Released: ' + movieRelease;
 
     movie.append(poster, movieTitleDiv, movieReleaseDiv);
 

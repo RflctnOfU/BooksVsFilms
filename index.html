@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Books VS Movies</title>
 </head>
+
 <body>
 
     <header>
@@ -34,20 +37,54 @@
     <main>
         <section class="section">
             <div class="field has-addons" id="search-bar">
-                <input type="text" class="input control" id="search-bar-input" placeholder="Search book and movie titles...">
+                <input type="text" class="input control" id="search-bar-input"
+                    placeholder="Search book and movie titles...">
                 <button type="submit" id="search-button">
                     <img src="./assets/images/search-icon.png" alt="magnifying glass icon" id="search-icon">
                 </button>
-             </div>
+            </div>
         </section>
-        <section class="box my-list-container" style="background-color: black;">
-        </section>
-     
 
-    </main>    
-    
-    <footer class="footer has-background-black" style=" border: solid 2px #ba5e08; border-radius: 10px; box-shadow: 0 0 10px 5px #ba5e08;">
-        <div class="content has-text-centered" style="color: #47e6fb; font-size: 1.5rem;">
+        <!-- <section class="section">
+            <h1 class="my-list" style="background-color: lightgray;">My List:</h1>
+        </section> -->
+
+        <!--Append dynamic elements starting with div.columns to section class="my-list-container"-->
+        <section class="box my-list-container" style="background-color: black;">
+            <!-- In the getBookMovie{} search function, add createElement div then setAttribute class="columns" and append to the existing section class="my-list-container"-->
+            <!-- <div class="columns"> -->
+                <!--Append this first book col AND the 2nd VS col to div class="columns" in displayCover{}-->
+                <!-- <div class="column is-5 dynamic-col">
+                    <div class="coverImg">
+                        <button class="thumbs-up"><i></i></button>
+                        <img src="" alt="">
+                        <button class="thumbs-down"><i></i></button>
+                    </div>
+                    <div class="bookTitle">Book title</div>
+                    <div class="bookPub">Book pub</div>
+                </div>
+                <div class="column is-2 dynamic-col">
+                    <div class="versus">insert background image</div>
+                    <button class="is-danger">Delete</button>
+                </div> -->
+                <!--Append this 3rd movie col to div class="columns" in displayPoster{}-->
+                <!-- <div class="column is-5 dynamic-col">
+                    <div class="posterImg">
+                        <button class="thumbs-up"><i></i></button>
+                        <img src="" alt="">
+                        <button class="thumbs-down"><i></i></button>
+                    </div>
+                    <div class="movieTitle">Movie Title</div>
+                    <div class="movieRelease">Movie Release</div>
+                </div>
+            </div> -->
+            
+        </section>
+ 
+    </main>
+
+    <footer class="footer">
+        <div class="footer-text">
             <p>
                 © 2022 Snug Squad Solutions
                 <!-- icon/image goes here -->
@@ -55,23 +92,9 @@
         </div>
     </footer>
 
-    
-    <section>
-        <div id="modal-js-example" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-            <div class="box $modal-card-body-background-color">
-                <p><span id="title-search"></span></p>
-                <div id="description-container" class="description-list"></div>          
-            </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-         </div>
-    </section> 
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
 
 </body>
+
 </html>
