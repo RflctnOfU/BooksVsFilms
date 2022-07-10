@@ -5,14 +5,9 @@
 
 let main = $('main')
 
-// let box = document.createElement('section');
-// box.setAttribute('class', 'box is-flex is-justify-content-space-between');
-// box.setAttribute('style', 'background-color: black');
-
-// let coverImg = $('#cover')
 let imgUrl;
 let posterUrl;
-// let posterImg = $('#poster')
+let listContainer = $('.my-list-container');
 
 let searchQuery = $('#search-bar-input')
 
@@ -72,73 +67,6 @@ let displayPoster = function (poster) {
 }
 
 let createDisplay = function () {
-    // console.log(bookTitle);
-    // let box = document.createElement('section');
-    // box.setAttribute('class', 'box is-flex is-justify-content-space-between');
-    // box.setAttribute('style', 'background-color: black');
-    // let card = document.createElement('div');
-    // card.setAttribute('class', 'card');
-    // card.setAttribute('id', 'book');
-    // card.setAttribute('style', 'background-color: black; box-shadow: 0 0 10px 10px; border: solid 1px #ba5e08; border-radius: 5px');
-    // let cardImage = document.createElement('div');
-    // cardImage.setAttribute('class', 'card-image');
-    // let figure = document.createElement('figure');
-    // figure.setAttribute('class', 'image');
-    // figure.setAttribute('id', 'cover');
-    // let bookCover = document.createElement('img');
-    // bookCover.setAttribute('src', imgUrl);
-    // figure.append(bookCover);
-    // cardImage.append(figure);
-    // let cardContent = document.createElement('div');
-    // cardContent.setAttribute('class', 'card-content');
-    // let content = document.createElement('div');
-    // content.setAttribute('class', 'content');
-    // content.setAttribute('style', 'color: white');
-    // let titleH2A = document.createElement('h2');
-    // titleH2A.setAttribute('class', 'is-size-5')
-    // titleH2A.setAttribute('id', 'bookTitle');
-    // titleH2A.textContent = "Title: " + localStorage.getItem('bookTitle');
-    // console.log(localStorage.getItem('bookTitle'));
-    // let titleH2B = document.createElement('h2');
-    // titleH2B.setAttribute('class', 'is-size-6');
-    // titleH2B.setAttribute('id', 'releaseDate');
-    // titleH2B.textContent = "Published: " + localStorage.getItem('bookPub');
-    // content.append(titleH2A, titleH2B);
-    // cardContent.append(content);
-    // card.append(cardImage, cardContent);
-    // box.append(card);
-
-    // let card1 = document.createElement('div');
-    // card1.setAttribute('class', 'card');
-    // card1.setAttribute('id', 'movie');
-    // card1.setAttribute('style', 'background-color: black; box-shadow: 0 0 10px 10px; border: solid 1px #47e6fb; border-radius: 5px')
-    // let cardImage1 = document.createElement('div');
-    // cardImage1.setAttribute('class', 'card-image');
-    // let figure1 = document.createElement('figure');
-    // figure1.setAttribute('class', 'image');
-    // figure1.setAttribute('id', 'poster');
-    // let moviePoster = document.createElement('img')
-    // moviePoster.setAttribute('src', posterUrl);
-    // figure1.append(moviePoster);
-    // cardImage1.append(figure1);
-    // let cardContent1 = document.createElement('div');
-    // cardContent1.setAttribute('class', 'card-content');
-    // let content1 = document.createElement('div');
-    // content1.setAttribute('class', 'content');
-    // content1.setAttribute('style', 'color: white');
-    // let titleH2A1 = document.createElement('h2');
-    // titleH2A1.setAttribute('class', 'is-size-5')
-    // titleH2A1.setAttribute('id', 'bookTitle');
-    // titleH2A1.textContent = "Title: " + localStorage.getItem('movieTitle');
-    // let titleH2B1 = document.createElement('h2');
-    // titleH2B1.setAttribute('class', 'is-size-6');
-    // titleH2B1.setAttribute('id', 'releaseDate');
-    // titleH2B1.textContent = "Released on: " + localStorage.getItem('movieRelease');
-    // content1.append(titleH2A1, titleH2B1);
-    // cardContent1.append(content1);
-    // card1.append(cardImage1, cardContent1);
-    // box.append(card1);
-    // main.append(box);
 
     // parent to ammend to section
     let columns = document.createElement('div');
@@ -157,19 +85,25 @@ let createDisplay = function () {
     bookUp.setAttribute('class', 'thumbs-up');
 
     //thumbs up icon
-    let thumbsUp = document.createElement('i');
+    let thumbsUpBook = document.createElement('i');
+    // thumbsUpBook.setAttribute('class', 'fa fa-*');
 
     //book thumbs-down
     let bookDown = document.createElement('button');
     bookDown.setAttribute('class', 'thumbs-down');
 
     //thumbs down icon
-    let thumbsDown = document.createElement('i');
+    let thumbsDownBook = document.createElement('i');
+    // thumbsDownBook.setAttribute('class', 'fa fa-*');
 
     //book cover
     let bookCover = document.createElement('img');
     bookCover.setAttribute('src', imgUrl)
     bookCover.setAttribute('alt', 'Book Cover');
+
+    bookUp.append(thumbsUpBook);
+    bookDown.append(thumbsDownBook);
+    cover.append(bookUp, bookCover, bookDown);
 
     //title div
     let bookTitleDiv = document.createElement('div');
@@ -179,6 +113,8 @@ let createDisplay = function () {
     let bookPubDiv = document.createElement('div');
     bookPubDiv.setAttribute('class', 'bookPub');
     bookPubDiv.textContent = bookPub;
+
+    book.append(cover, bookTitleDiv, bookPubDiv);
 
     //icon div
     let vsIcon = document.createElement('div');
@@ -193,6 +129,9 @@ let createDisplay = function () {
     deleteBtn.setAttribute('class', 'is-danger');
     deleteBtn.textContent = 'Delete';
 
+    vsIcon.append(vsIconImg, deleteBtn);
+
+
     //movie div
     let movie = document.createElement('div');
     movie.setAttribute('class', 'column is-5 dynamic-col');
@@ -206,19 +145,24 @@ let createDisplay = function () {
     movieUp.setAttribute('class', 'thumbs-up');
 
     //thumbs up icon
-    // let thumbsUp = document.createElement('i');
-
-    //             //book thumbs-down
-    // let bookDown = document.createElement('button');
-    // bookDown.setAttribute('class', 'thumbs-down');
+    let thumbsUpMovie = document.createElement('i');
+    // thumbsUpMovie.setAttribute('class', 'fa fa-*');
+    //Movie thumbs-down
+    let movieDown = document.createElement('button');
+    movieDown.setAttribute('class', 'thumbs-down');
 
     //                 //thumbs down icon
-    // let thumbsDown = document.createElement('i');
+    let thumbsDownMovie = document.createElement('i');
+    // thumbsDownMovie.setAttribute('class', 'fa fa-*');
 
     //book cover
     let moviePoster = document.createElement('img');
     moviePoster.setAttribute('src', imgUrl)
     moviePoster.setAttribute('alt', 'Movie Poster');
+
+    movieUp.append(thumbsUpMovie);
+    movieDown.append(thumbsDownMovie);
+    poster.append(movieUp, moviePoster, movieDown);
 
     //title div
     let movieTitleDiv = document.createElement('div');
@@ -228,6 +172,14 @@ let createDisplay = function () {
     let movieReleaseDiv = document.createElement('div');
     movieReleaseDiv.setAttribute('class', 'bookPub');
     movieReleaseDiv.textContent = movieRelease;
+
+    movie.append(poster, movieTitleDiv, movieReleaseDiv);
+
+    movie.append(poster, movieTitleDiv, movieReleaseDiv);
+
+    columns.append(book, vsIcon, movie);
+    listContainer.append(columns);
+
 }
 
 searchBtn.click(searchToApi)
