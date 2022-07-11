@@ -1,4 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
 :root {
     --background-color: black;
     --text-color: white;
@@ -160,18 +161,8 @@ body {
     background-color: white;
 }
 
-.delete {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 0px;
-    border-radius: 20px;
-    border: none;
-}
-
-.bookTitle, .bookPub {
+.bookTitle,
+.bookPub {
     color: var(--text-color);
     font-family: niveau-grotesk, sans-serif;
     font-size: 19px;
@@ -183,7 +174,8 @@ body {
     text-shadow: 0px 3px 3px var(--neon-orange);
 }
 
-.movieTitle, .movieRelease {
+.movieTitle,
+.movieRelease {
     color: var(--text-color);
     font-family: niveau-grotesk, sans-serif;
     font-size: 19px;
