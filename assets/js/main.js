@@ -1,6 +1,8 @@
 let imgUrl;
 let posterUrl;
 let listContainer = $('.my-list-container');
+//declare empty array
+var tableArr = []
 
 let searchQuery = $('#search-bar-input');
 
@@ -183,7 +185,30 @@ let createDisplay = function () {
         $(this).siblings('.thumbs-up').removeAttr('style');
     });
 
+    var tableData = {
+        thumbsUp: $('.thumbs-up').attr('style'),
+        thumbsDown: $('.thumbs-down').attr('style'),
+        bookCover: imgUrl,
+        published: localStorage.getItem('bookPub'),
+        bookTitle: localStorage.getItem('bookTitle'),
+        versus: vsIconImg,
+        moviePoster: posterUrl,
+        movieTitle: localStorage.getItem('movieTitle'),
+        release: localStorage.getItem('movieRelease')
+    }
+    tableArr.push(tableData)
+    localStorage.setItem("search", JSON.stringify(tableArr))
+    console.log(tableArr)
 }
+
+
+let init = function() {
+    let loadArr = []
+    loadArr = JSON.parse(localStorage.getItem('search'))
+    console.log(loadArr)
+}
+
+init()
 
 document.addEventListener('keydown', (event) => {
     const e = event || window.event;
