@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Books VS Movies</title>
 </head>
 
@@ -45,49 +46,58 @@
             </div>
         </section>
 
-        <!-- <section class="section">
-            <h1 class="my-list" style="background-color: lightgray;">My List:</h1>
-        </section> -->
+        <section class="section">
+            <h1 class="my-list">My List:</h1>
+        </section>
 
         <!--Append dynamic elements starting with div.columns to section class="my-list-container"-->
-        <section class="box my-list-container" style="background-color: black;">
+        <section class="box my-list-container">
             <!-- In the getBookMovie{} search function, add createElement div then setAttribute class="columns" and append to the existing section class="my-list-container"-->
-            <!-- <div class="columns"> -->
+            <div class="columns my-list-rows">
                 <!--Append this first book col AND the 2nd VS col to div class="columns" in displayCover{}-->
-                <!-- <div class="column is-5 dynamic-col">
+                <div class="column is-5 dynamic-col">
                     <div class="coverImg">
-                        <button class="thumbs-up"><i></i></button>
-                        <img src="" alt="">
-                        <button class="thumbs-down"><i></i></button>
+                        <button type="submit" class="thumbs-up" alt="Thumbs up button icon.">
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <img class="book-cover" src="" alt="">
+                        <button type="submit" class="thumbs-down" alt="Thumbs down button icon.">
+                            <i class="fas fa-thumbs-down"></i>
+                        </button>
                     </div>
-                    <div class="bookTitle">Book title</div>
-                    <div class="bookPub">Book pub</div>
+                    <div class="bookTitle"></div>
+                    <div class="bookPub"></div>
                 </div>
                 <div class="column is-2 dynamic-col">
-                    <div class="versus">insert background image</div>
-                    <button class="is-danger">Delete</button>
-                </div> -->
-                <!--Append this 3rd movie col to div class="columns" in displayPoster{}-->
-                <!-- <div class="column is-5 dynamic-col">
-                    <div class="posterImg">
-                        <button class="thumbs-up"><i></i></button>
-                        <img src="" alt="">
-                        <button class="thumbs-down"><i></i></button>
-                    </div>
-                    <div class="movieTitle">Movie Title</div>
-                    <div class="movieRelease">Movie Release</div>
+                    <div class="versus"></div>
+                    <button type="submit" class="delete" alt="Delete button.">
+                        <i class="fa-solid fa-trash-can-xmark"></i>
+                    </button>
                 </div>
-            </div> -->
-            
+                <!--Append this 3rd movie col to div class="columns" in displayPoster{}-->
+                <div class="column is-5 dynamic-col">
+                    <div class="posterImg">
+                        <button type="submit" class="thumbs-up" alt="Thumbs up button icon.">
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <img class="movie-cover" src="" alt="">
+                        <button type="submit" class="thumbs-down" alt="Thumbs down button icon.">
+                            <i class="fas fa-thumbs-down"></i>
+                        </button>
+                    </div>
+                    <div class="movieTitle"></div>
+                    <div class="movieRelease"></div>
+                </div>
+            </div>
+
         </section>
- 
+
     </main>
 
     <footer class="footer">
         <div class="footer-text">
             <p>
                 © 2022 Snug Squad Solutions
-                <!-- icon/image goes here -->
             </p>
         </div>
     </footer>
