@@ -1,20 +1,12 @@
-// http://openlibrary.org/search.json?
-// https://covers.openlibrary.org/b/id/
-
-
-
-// let main = $('main')
-
 let imgUrl;
 let posterUrl;
 let listContainer = $('.my-list-container');
 
-let searchQuery = $('#search-bar-input')
+let searchQuery = $('#search-bar-input');
 
-let searchBtn = $('#search-button')
+let searchBtn = $('#search-button');
 
 let searchToApi = function (e) {
-    // e.preventDefault(); was disrupting the enter click.
     let searchTerm = searchQuery.val();
     if (searchTerm) {
         getBookMovie(searchTerm)
@@ -82,6 +74,7 @@ let createDisplay = function () {
 
     //book thumbs-up
     let bookUp = document.createElement('button');
+    bookUp.setAttribute('type', 'button');
     bookUp.setAttribute('class', 'thumbs-up');
     bookUp.setAttribute('alt', 'Thumbs up button icon');
 
@@ -91,6 +84,7 @@ let createDisplay = function () {
 
     //book thumbs-down
     let bookDown = document.createElement('button');
+    bookDown.setAttribute('type', 'button');
     bookDown.setAttribute('class', 'thumbs-down');
     bookDown.setAttribute('alt', 'Thumbs down button icon.');
 
@@ -139,6 +133,7 @@ let createDisplay = function () {
 
     //movie thumbs-up
     let movieUp = document.createElement('button');
+    movieUp.setAttribute('type', 'button');
     movieUp.setAttribute('class', 'thumbs-up');
     movieUp.setAttribute('alt', 'Thumbs up button icon.');
 
@@ -148,6 +143,7 @@ let createDisplay = function () {
 
     //Movie thumbs-down
     let movieDown = document.createElement('button');
+    movieDown.setAttribute('type', 'button');
     movieDown.setAttribute('class', 'thumbs-down');
 
     //                 //thumbs down icon
@@ -178,6 +174,14 @@ let createDisplay = function () {
 
     columns.append(book, vsIcon, movie);
     listContainer.append(columns);
+    $('.thumbs-up').click(function () {
+        this.setAttribute('style', 'background-color: green');
+        $(this).siblings('.thumbs-down').removeAttr('style');
+    });
+    $('.thumbs-down').click(function () {
+        this.setAttribute('style', 'background-color: red');
+        $(this).siblings('.thumbs-up').removeAttr('style');
+    });
 
 }
 
@@ -189,4 +193,3 @@ document.addEventListener('keydown', (event) => {
 })
 
 searchBtn.click(searchToApi)
-// getBooks();
