@@ -1,7 +1,16 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+:root {
+    --background-color: black;
+    --text-color: white;
+    --dark-orange-glow: #ba5e08;
+    --search-bar-blue: #0896ba;
+    --neon-orange: #ff5e00;
+    --neon-blue: #00ccff;
+}
 
 body {
-    background-color: black;
+    background-color: var(--background-color);
+    width: 100%;
 }
 
 /* Hero Section */
@@ -9,8 +18,8 @@ body {
     background-image: url("../images/black-background-image.jpeg");
     background-size: 100%;
     background-repeat: repeat;
-    border-bottom: solid 2px #ba5e08;
-    box-shadow: 0 0 10px 5px #ba5e08;
+    border-bottom: solid 2px var(--dark-orange-glow);
+    box-shadow: 0 0 10px 5px var(--dark-orange-glow);
 }
 
 #image-col {
@@ -34,26 +43,26 @@ body {
     font-weight: 900;
     font-style: italic;
     font-size: 36px;
-    color: white;
-    /* justify-content: center;
-    align-content: center; */
-    /* display: block; */
+    color: var(--text-color);
+    justify-content: center;
+    align-content: center;
+    display: block;
 }
 
 #hero-subtitle {
     font-family: niveau-grotesk, sans-serif;
     font-weight: 400;
     font-style: italic;
-    color: white;
-    /* justify-content: center;
+    color: var(--text-color);
+    justify-content: center;
     align-content: center;
-   display: block;*/
+    display: block;
 }
 
 /* Search Bar Section */
 #search-bar {
     border-radius: 10px;
-    box-shadow: 0 0 10px 8px #0896ba;
+    box-shadow: 0 0 10px 8px var(--search-bar-blue);
 }
 
 #search-bar-input {
@@ -62,7 +71,7 @@ body {
 }
 
 #search-button {
-    background-color: #0896ba;
+    background-color: var(--search-bar-blue);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border: solid 1px black;
@@ -73,13 +82,125 @@ body {
 }
 
 /* Dynamic HTML Table Section */
+.my-list {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--text-color);
+    font-family: niveau-grotesk, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+}
 
+.my-list-container {
+    background-color: var(--background-color);
+}
+
+.my-list-rows {
+    background-color: var(--background-color);
+}
+
+.dynamic-col {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.versus-col {
+    margin: 10px 0px;
+}
+
+.coverImg,
+.posterImg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.coverImg {
+    background-image: url(../images/orange-circle.png);
+    background-size: 100%;
+}
+
+.versus {
+    background-image: url(../images/vs-logo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 260px;
+}
+
+.posterImg {
+    background-image: url(../images/blue-circle.png);
+    background-size: 100%;
+}
+
+.book-cover,
+.movie-cover {
+    max-width: 180px;
+    max-height: 260px;
+    margin: 10px 0px;
+}
+
+.thumbs-up,
+.thumbs-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 20px;
+    border: solid 2px darkgray;
+    background-color: white;
+}
+
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    border-radius: 20px;
+    border: none;
+}
+
+.bookTitle, .bookPub {
+    color: var(--text-color);
+    font-family: niveau-grotesk, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    justify-content: center;
+    align-content: center;
+    display: block;
+    text-shadow: 0px 3px 3px var(--neon-orange);
+}
+
+.movieTitle, .movieRelease {
+    color: var(--text-color);
+    font-family: niveau-grotesk, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    justify-content: center;
+    align-content: center;
+    display: block;
+    text-shadow: 0px 3px 3px var(--neon-blue);
+}
 
 /* Footer Section */
 .footer {
     background-color: black;
-    border-top: solid 2px #ba5e08;
-    box-shadow: 0 0 10px 5px #ba5e08;
+    border-top: solid 2px var(--dark-orange-glow);
+    box-shadow: 0 0 10px 5px var(--dark-orange-glow);
+    margin-top: 20px;
 }
 
 .footer-text {
@@ -87,5 +208,5 @@ body {
     font-family: niveau-grotesk, sans-serif;
     font-weight: 300;
     font-style: italic;
-    color: white;
+    color: var(--text-color);
 }

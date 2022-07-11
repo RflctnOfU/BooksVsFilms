@@ -175,8 +175,6 @@ let createDisplay = function () {
 
     movie.append(poster, movieTitleDiv, movieReleaseDiv);
 
-    movie.append(poster, movieTitleDiv, movieReleaseDiv);
-
     columns.append(book, vsIcon, movie);
     listContainer.append(columns);
 
