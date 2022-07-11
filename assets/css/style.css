@@ -152,8 +152,13 @@ body {
     height: 40px;
     margin: 20px;
     border-radius: 20px;
-    border: solid 2px darkgray;
+    border: solid 2px black;
     background-color: white;
+}
+
+.thumbs-up:hover,
+.thumbs-down:hover {
+    background-color: lightgray;
 }
 
 .bookTitle,
@@ -196,4 +201,9 @@ body {
     font-weight: 300;
     font-style: italic;
     color: var(--text-color);
+}
+
+.footer-subtext {
+    text-align: center;
+    margin-top: 5px;
 }
