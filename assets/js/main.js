@@ -1,13 +1,8 @@
-// http://openlibrary.org/search.json?
-// https://covers.openlibrary.org/b/id/
-
-
-
-// let main = $('main')
-
 let imgUrl;
 let posterUrl;
 let listContainer = $('.my-list-container');
+//declare empty array
+var tableArr = []
 
 let searchQuery = $('#search-bar-input')
 
@@ -179,37 +174,51 @@ let createDisplay = function () {
     columns.append(book, vsIcon, movie);
     listContainer.append(columns);
 
+    var tableData = {
+        thumbsUp: $('.thumbs-up').attr('style'),
+        thumbsDown: $('.thumbs-down').attr('style'),
+        bookCover: imgUrl,
+        published: localStorage.getItem('bookPub'),
+        bookTitle: localStorage.getItem('bookTitle'),
+        versus: vsIconImg,
+        moviePoster: posterUrl,
+        movieTitle: localStorage.getItem('movieTitle'),
+        release: localStorage.getItem('movieRelease')
+    }
+    tableArr.push(tableData)
+    localStorage.setItem("search", JSON.stringify(tableArr))
+    console.log(tableArr)
 }
 
-//tableData saved as a sting
-var tableData = {
-    thumbsUp: $('.thumbs-up').val(),
-    thumbsDown: $('.thumbs-down').val(),
-    bookCover: $('.book-cover').val(),
-    published: $('.bookpub').val(),
-    bookTitle: $('.bookTitle').val(),
-    versus: $('.versus').val(),
-    moviePoster: $('.movie-cover').val(),
-    movieTitle: $('.movie-title').val(),
-    release: $('.movieRelease').val()
+
+let init = function() {
+    let loadArr = []
+    loadArr = JSON.parse(localStorage.getItem('search'))
+    console.log(loadArr)
 }
-localStorage.setItem('tableData', JSON.stringify(tableData))
+
+init()
+
+//tableData saved as a sting
+
+// localStorage.setItem('tableData', JSON.stringify(tableData))
 
 //need to loop over all the tables created
 
 //parse the data back onto the page on reload
-var tableData= JSON.parse(localStorage.getItem('tableData'))
-$('.thumbs-up').val(tableData.thumbsUp)
-$('.thumbs-down').val(tableData.thumbsDown)
-$('.book-cover').val(tableData.bookCover)
-$('.bookpub').val(tableData.published)
-$('.bookTitle').val(tableData.bookTitle)
-$('.versus').val(tableData.versus)
-$('.movie-cover').val(tableData.moviePoster)
-$('.movie-title').val(tableData.movieTitle)
-$('.movie-release').val(tableData.release)
 
-localStorage.getItem('tableData')
+// tableData= JSON.parse(localStorage.getItem('tableData'))
+// $('.thumbs-up').val(tableData.thumbsUp)
+// $('.thumbs-down').val(tableData.thumbsDown)
+// $('.book-cover').val(tableData.bookCover)
+// $('.bookpub').val(tableData.published)
+// $('.bookTitle').val(tableData.bookTitle)
+// $('.versus').val(tableData.versus)
+// $('.movie-cover').val(tableData.moviePoster)
+// $('.movie-title').val(tableData.movieTitle)
+// $('.movie-release').val(tableData.release)
+
+// localStorage.getItem('tableData')
 
 document.addEventListener('keydown', (event) => {
     const e = event || window.event;
