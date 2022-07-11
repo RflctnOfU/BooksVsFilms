@@ -28,7 +28,7 @@ body {
     justify-content: center;
 }
 
-#text-col {
+#title-col {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -37,17 +37,6 @@ body {
 
 #hero-logo {
     max-width: 100%;
-}
-
-#hero-title {
-    font-family: niveau-grotesk, sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 36px;
-    color: var(--text-color);
-    justify-content: center;
-    align-content: center;
-    display: block;
 }
 
 #hero-subtitle {
