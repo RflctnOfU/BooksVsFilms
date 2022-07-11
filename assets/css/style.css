@@ -28,7 +28,7 @@ body {
     justify-content: center;
 }
 
-#text-col {
+#title-col {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -39,25 +39,14 @@ body {
     max-width: 100%;
 }
 
-#hero-title {
-    font-family: niveau-grotesk, sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 36px;
-    color: var(--text-color);
-    justify-content: center;
-    align-content: center;
-    display: block;
-}
-
 #hero-subtitle {
     font-family: niveau-grotesk, sans-serif;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 600;
     color: var(--text-color);
     justify-content: center;
     align-content: center;
     display: block;
+    text-shadow: 0px 3px 8px darkgray;
 }
 
 /* Search Bar Section */
@@ -87,11 +76,11 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
-    color: var(--text-color);
-    font-family: niveau-grotesk, sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    font-style: italic;
+}
+
+.my-list-img {
+    min-width: 125px;
+    max-width: 12%;
 }
 
 .my-list-container {
