@@ -209,3 +209,8 @@ body {
     font-style: italic;
     color: var(--text-color);
 }
+
+.footer-subtext {
+    text-align: center;
+    margin-top: 5px;
+}
