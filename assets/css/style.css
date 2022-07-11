@@ -124,7 +124,10 @@ body {
 
 .coverImg {
     background-image: url(../images/orange-circle.png);
-    background-size: 100%;
+    background-size: 100% 100%;
+    min-width: 420px;
+    max-width: 480px;
+    background-repeat: no-repeat;
 }
 
 .versus {
@@ -137,7 +140,10 @@ body {
 
 .posterImg {
     background-image: url(../images/blue-circle.png);
-    background-size: 100%;
+    background-size: 100% 100%;
+    min-width: 420px;
+    max-width: 480px;
+    background-repeat: no-repeat;
 }
 
 .book-cover,
@@ -158,17 +164,6 @@ body {
     border-radius: 20px;
     border: solid 2px darkgray;
     background-color: white;
-}
-
-.delete {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 0px;
-    border-radius: 20px;
-    border: none;
 }
 
 .bookTitle, .bookPub {
