@@ -179,15 +179,19 @@ let createDisplay = function () {
     $('.thumbs-up').click(function () {
         this.setAttribute('style', 'background-color: green');
         $(this).siblings('.thumbs-down').removeAttr('style');
+        tableData.thumbsUp = true;
+        tableData.thumbsDown = false;
     });
     $('.thumbs-down').click(function () {
         this.setAttribute('style', 'background-color: red');
         $(this).siblings('.thumbs-up').removeAttr('style');
+        tableData.thumbsUp = false;
+        tableData.thumbsDown = true;
     });
 
     var tableData = {
-        thumbsUp: $('.thumbs-up').attr('style'),
-        thumbsDown: $('.thumbs-down').attr('style'),
+        thumbsUp: '',
+        thumbsDown: '',
         bookCover: imgUrl,
         published: localStorage.getItem('bookPub'),
         bookTitle: localStorage.getItem('bookTitle'),
@@ -202,7 +206,7 @@ let createDisplay = function () {
 }
 
 
-let init = function() {
+let init = function () {
     let loadArr = []
     loadArr = JSON.parse(localStorage.getItem('search'))
     console.log(loadArr)
