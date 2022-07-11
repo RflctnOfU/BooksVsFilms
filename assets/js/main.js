@@ -181,6 +181,36 @@ let createDisplay = function () {
 
 }
 
+//tableData saved as a sting
+var tableData = {
+    thumbsUp: $('.thumbs-up').val(),
+    thumbsDown: $('.thumbs-down').val(),
+    bookCover: $('.book-cover').val(),
+    published: $('.bookpub').val(),
+    bookTitle: $('.bookTitle').val(),
+    versus: $('.versus').val(),
+    moviePoster: $('.movie-cover').val(),
+    movieTitle: $('.movie-title').val(),
+    release: $('.movieRelease').val()
+}
+localStorage.setItem('tableData', JSON.stringify(tableData))
+
+//need to loop over all the tables created
+
+//parse the data back onto the page on reload
+var tableData= JSON.parse(localStorage.getItem('tableData'))
+$('.thumbs-up').val(tableData.thumbsUp)
+$('.thumbs-down').val(tableData.thumbsDown)
+$('.book-cover').val(tableData.bookCover)
+$('.bookpub').val(tableData.published)
+$('.bookTitle').val(tableData.bookTitle)
+$('.versus').val(tableData.versus)
+$('.movie-cover').val(tableData.moviePoster)
+$('.movie-title').val(tableData.movieTitle)
+$('.movie-release').val(tableData.release)
+
+localStorage.getItem('tableData')
+
 document.addEventListener('keydown', (event) => {
     const e = event || window.event;
     if (e.keyCode === 13) {
