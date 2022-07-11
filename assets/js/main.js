@@ -14,7 +14,7 @@ let searchQuery = $('#search-bar-input')
 let searchBtn = $('#search-button')
 
 let searchToApi = function (e) {
-    e.preventDefault();
+    // e.preventDefault(); was disrupting the enter click.
     let searchTerm = searchQuery.val();
     if (searchTerm) {
         getBookMovie(searchTerm)
@@ -179,6 +179,13 @@ let createDisplay = function () {
     listContainer.append(columns);
 
 }
+
+document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+    if (e.keyCode === 13) {
+        searchToApi()
+    }
+})
 
 searchBtn.click(searchToApi)
 // getBooks();
