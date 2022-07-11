@@ -78,11 +78,11 @@ let createDisplay = function () {
 
     //book cover div
     let cover = document.createElement('div');
-    cover.setAttribute('class', 'coverImg ');
+    cover.setAttribute('class', 'coverImg is-flex is-justify-content-center');
 
     //book thumbs-up
     let bookUp = document.createElement('button');
-    bookUp.setAttribute('class', 'thumbs-up');
+    bookUp.setAttribute('class', 'thumbs-up is-align-self-center');
 
     //thumbs up icon
     let thumbsUpBook = document.createElement('i');
@@ -90,7 +90,7 @@ let createDisplay = function () {
 
     //book thumbs-down
     let bookDown = document.createElement('button');
-    bookDown.setAttribute('class', 'thumbs-down');
+    bookDown.setAttribute('class', 'thumbs-down is-align-self-center');
 
     //thumbs down icon
     let thumbsDownBook = document.createElement('i');
@@ -118,7 +118,7 @@ let createDisplay = function () {
 
     //icon div
     let vsIcon = document.createElement('div');
-    vsIcon.setAttribute('class', 'column is-2 dynamic-col');
+    vsIcon.setAttribute('class', 'column is-2 dynamic-col is-flex is-justify-content-center mb-6');
 
     //vsIconImg background div
     let vsIconImg = document.createElement('div');
@@ -126,7 +126,7 @@ let createDisplay = function () {
 
     //delete button
     let deleteBtn = document.createElement('button');
-    deleteBtn.setAttribute('class', 'is-danger');
+    deleteBtn.setAttribute('class', 'is-danger is-align-self-flex-end');
     deleteBtn.textContent = 'Delete';
 
     vsIcon.append(vsIconImg, deleteBtn);
@@ -134,22 +134,22 @@ let createDisplay = function () {
 
     //movie div
     let movie = document.createElement('div');
-    movie.setAttribute('class', 'column is-5 dynamic-col is-flex-justify-content');
+    movie.setAttribute('class', 'column is-5 dynamic-col');
 
     //movie cover div
     let poster = document.createElement('div');
-    poster.setAttribute('class', 'posterImg');
+    poster.setAttribute('class', 'posterImg is-flex is-justify-content-center');
 
     //movie thumbs-up
     let movieUp = document.createElement('button');
-    movieUp.setAttribute('class', 'thumbs-up');
+    movieUp.setAttribute('class', 'thumbs-up is-align-self-center');
 
     //thumbs up icon
     let thumbsUpMovie = document.createElement('i');
     // thumbsUpMovie.setAttribute('class', 'fa fa-*');
     //Movie thumbs-down
     let movieDown = document.createElement('button');
-    movieDown.setAttribute('class', 'thumbs-down');
+    movieDown.setAttribute('class', 'thumbs-down is-align-self-center');
 
     //                 //thumbs down icon
     let thumbsDownMovie = document.createElement('i');
