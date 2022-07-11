@@ -3,7 +3,7 @@
 
 
 
-let main = $('main')
+// let main = $('main')
 
 let imgUrl;
 let posterUrl;
@@ -14,7 +14,7 @@ let searchQuery = $('#search-bar-input')
 let searchBtn = $('#search-button')
 
 let searchToApi = function (e) {
-    e.preventDefault();
+    // e.preventDefault(); was disrupting the enter click.
     let searchTerm = searchQuery.val();
     if (searchTerm) {
         getBookMovie(searchTerm)
@@ -70,7 +70,7 @@ let createDisplay = function () {
 
     // parent to ammend to section
     let columns = document.createElement('div');
-    columns.setAttribute('class', 'columns');
+    columns.setAttribute('class', 'columns my-list-rows');
 
     //book div
     let book = document.createElement('div');
@@ -78,26 +78,29 @@ let createDisplay = function () {
 
     //book cover div
     let cover = document.createElement('div');
-    cover.setAttribute('class', 'coverImg is-flex is-justify-content-center');
+    cover.setAttribute('class', 'coverImg');
 
     //book thumbs-up
     let bookUp = document.createElement('button');
-    bookUp.setAttribute('class', 'thumbs-up is-align-self-center');
+    bookUp.setAttribute('class', 'thumbs-up');
+    bookUp.setAttribute('alt', 'Thumbs up button icon');
 
     //thumbs up icon
     let thumbsUpBook = document.createElement('i');
-    // thumbsUpBook.setAttribute('class', 'fa fa-*');
+    thumbsUpBook.setAttribute('class', 'fas fa-thumbs-up');
 
     //book thumbs-down
     let bookDown = document.createElement('button');
-    bookDown.setAttribute('class', 'thumbs-down is-align-self-center');
+    bookDown.setAttribute('class', 'thumbs-down');
+    bookDown.setAttribute('alt', 'Thumbs down button icon.');
 
     //thumbs down icon
     let thumbsDownBook = document.createElement('i');
-    // thumbsDownBook.setAttribute('class', 'fa fa-*');
+    thumbsDownBook.setAttribute('class', 'fas fa-thumbs-down');
 
     //book cover
     let bookCover = document.createElement('img');
+    bookCover.setAttribute('class', 'book-cover');
     bookCover.setAttribute('src', imgUrl)
     bookCover.setAttribute('alt', 'Book Cover');
 
@@ -107,29 +110,23 @@ let createDisplay = function () {
 
     //title div
     let bookTitleDiv = document.createElement('div');
-    bookTitleDiv.setAttribute('class', 'bookTitle has-text-centered is-size-3 has-text-weight-semibold');
+    bookTitleDiv.setAttribute('class', 'bookTitle');
     bookTitleDiv.textContent = localStorage.getItem('bookTitle');
 
     let bookPubDiv = document.createElement('div');
-    bookPubDiv.setAttribute('class', 'bookPub has-text-centered');
+    bookPubDiv.setAttribute('class', 'bookPub');
     bookPubDiv.textContent = 'Published: ' + localStorage.getItem('bookPub');
 
     book.append(cover, bookTitleDiv, bookPubDiv);
 
     //icon div
     let vsIcon = document.createElement('div');
-    vsIcon.setAttribute('class', 'column is-2 dynamic-col is-flex is-justify-content-center mb-6');
+    vsIcon.setAttribute('class', 'column is-2 dynamic-col');
 
     //vsIconImg background div
     let vsIconImg = document.createElement('div');
     vsIconImg.setAttribute('class', 'versus');
-
-    //delete button
-    let deleteBtn = document.createElement('button');
-    deleteBtn.setAttribute('class', 'is-danger is-align-self-flex-end');
-    deleteBtn.textContent = 'Delete';
-
-    vsIcon.append(vsIconImg, deleteBtn);
+    vsIcon.append(vsIconImg);
 
 
     //movie div
@@ -138,26 +135,30 @@ let createDisplay = function () {
 
     //movie cover div
     let poster = document.createElement('div');
-    poster.setAttribute('class', 'posterImg is-flex is-justify-content-center');
+    poster.setAttribute('class', 'posterImg');
 
     //movie thumbs-up
     let movieUp = document.createElement('button');
-    movieUp.setAttribute('class', 'thumbs-up is-align-self-center');
+    movieUp.setAttribute('class', 'thumbs-up');
+    movieUp.setAttribute('alt', 'Thumbs up button icon.');
 
     //thumbs up icon
     let thumbsUpMovie = document.createElement('i');
-    // thumbsUpMovie.setAttribute('class', 'fa fa-*');
+    thumbsUpMovie.setAttribute('class', 'fas fa-thumbs-up');
+
     //Movie thumbs-down
     let movieDown = document.createElement('button');
-    movieDown.setAttribute('class', 'thumbs-down is-align-self-center');
+    movieDown.setAttribute('class', 'thumbs-down');
 
     //                 //thumbs down icon
     let thumbsDownMovie = document.createElement('i');
-    // thumbsDownMovie.setAttribute('class', 'fa fa-*');
+    thumbsDownMovie.setAttribute('class', 'fas fa-thumbs-down');
+    thumbsDownMovie.setAttribute('alt', 'Thumbs down button icon.')
 
     //book cover
     let moviePoster = document.createElement('img');
-    moviePoster.setAttribute('src', posterUrl)
+    moviePoster.setAttribute('class', 'movie-cover');
+    moviePoster.setAttribute('src', posterUrl);
     moviePoster.setAttribute('alt', 'Movie Poster');
 
     movieUp.append(thumbsUpMovie);
@@ -166,11 +167,11 @@ let createDisplay = function () {
 
     //title div
     let movieTitleDiv = document.createElement('div');
-    movieTitleDiv.setAttribute('class', 'movieTitle has-text-centered is-size-3 has-text-weight-semibold');
+    movieTitleDiv.setAttribute('class', 'movieTitle');
     movieTitleDiv.textContent = localStorage.getItem('movieTitle');
 
     let movieReleaseDiv = document.createElement('div');
-    movieReleaseDiv.setAttribute('class', 'movieRelease has-text-centered');
+    movieReleaseDiv.setAttribute('class', 'movieRelease');
     movieReleaseDiv.textContent = 'Released: ' + movieRelease;
 
     movie.append(poster, movieTitleDiv, movieReleaseDiv);
@@ -179,6 +180,13 @@ let createDisplay = function () {
     listContainer.append(columns);
 
 }
+
+document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+    if (e.keyCode === 13) {
+        searchToApi()
+    }
+})
 
 searchBtn.click(searchToApi)
 // getBooks();
