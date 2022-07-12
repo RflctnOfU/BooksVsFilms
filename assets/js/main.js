@@ -224,8 +224,7 @@ let createDisplay = function () {
 //initialization function pulls search data out of storage and sets in in an array. For future update - will display search history on reload
 let init = function () {
     let loadArr = []
-    loadArr = JSON.parse(localStorage.getItem('search'))
-    console.log(loadArr)
+    loadArr = JSON.parse(localStorage.getItem('search'));
 };
 
 init();
