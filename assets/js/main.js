@@ -176,22 +176,12 @@ let createDisplay = function () {
 
     columns.append(book, vsIcon, movie);
     listContainer.append(columns);
-    $('.thumbs-up').click(function () {
-        this.setAttribute('style', 'background-color: green');
-        $(this).siblings('.thumbs-down').removeAttr('style');
-        tableData.thumbsUp = true;
-        tableData.thumbsDown = false;
-    });
-    $('.thumbs-down').click(function () {
-        this.setAttribute('style', 'background-color: red');
-        $(this).siblings('.thumbs-up').removeAttr('style');
-        tableData.thumbsUp = false;
-        tableData.thumbsDown = true;
-    });
 
     var tableData = {
-        thumbsUp: '',
-        thumbsDown: '',
+        thumbsUpBk: '',
+        thumbsUpMv: '',
+        thumbsDownBk: '',
+        thumbsDownMv: '',
         bookCover: imgUrl,
         published: localStorage.getItem('bookPub'),
         bookTitle: localStorage.getItem('bookTitle'),
@@ -200,9 +190,42 @@ let createDisplay = function () {
         movieTitle: localStorage.getItem('movieTitle'),
         release: localStorage.getItem('movieRelease')
     }
-    tableArr.push(tableData)
-    localStorage.setItem("search", JSON.stringify(tableArr))
-    console.log(tableArr)
+    $('.thumbs-up').click(function (clicks) {
+        this.setAttribute('style', 'background-color: green');
+        $(this).siblings('.thumbs-down').removeAttr('style');
+        if (this === bookUp) {
+            tableData.thumbsUpBk = true;
+            tableData.thumbsDownBk = false;
+            console.log(tableData)
+        } else if (this === movieUp) {
+            tableData.thumbsUpMv = true;
+            tableData.thumbsDownMv = false;
+            console.log(tableData);
+        }
+        arrCheck(clicks);
+    });
+    $('.thumbs-down').click(function (clicks) {
+        this.setAttribute('style', 'background-color: red');
+        $(this).siblings('.thumbs-up').removeAttr('style');
+        if (this === bookDown) {
+            tableData.thumbsDownBk = true;
+            tableData.thumbsUpBk = false;
+            console.log(tableData);
+        } else if (this === movieDown) {
+            tableData.thumbsDownMv = true;
+            tableData.thumbsUpMv = false;
+            console.log(tableData)
+        }
+        arrCheck(clicks);
+    });
+    let arrCheck = function () {
+        if ((tableData.thumbsUpMv === (true || false)) && (tableData.thumbsUpMv === (true || false))) {
+            tableArr.push(tableData);
+            console.log(tableArr);
+            localStorage.setItem('search', JSON.stringify(tableArr))
+            console.log(localStorage.getItem('search'));
+        }
+    }
 }
 
 
