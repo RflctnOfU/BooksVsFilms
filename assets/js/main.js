@@ -13,9 +13,8 @@ let searchToApi = function (e) {
     let searchTerm = searchQuery.val();
     if (searchTerm) {
         getBookMovie(searchTerm)
-
     }
-
+    searchQuery.val('');
 }
 //fetch function
 let getBookMovie = function (search) {
