@@ -191,7 +191,7 @@ let createDisplay = function () {
         release: localStorage.getItem('movieRelease')
     }
     $('.thumbs-up').click(function (clicks) {
-        this.setAttribute('style', 'background-color: green');
+        this.setAttribute('style', 'background-color: #00ff00');
         $(this).siblings('.thumbs-down').removeAttr('style');
         if (this === bookUp) {
             tableData.thumbsUpBk = true;
@@ -205,7 +205,7 @@ let createDisplay = function () {
         arrCheck(clicks);
     });
     $('.thumbs-down').click(function (clicks) {
-        this.setAttribute('style', 'background-color: red');
+        this.setAttribute('style', 'background-color: #ff1e1e');
         $(this).siblings('.thumbs-up').removeAttr('style');
         if (this === bookDown) {
             tableData.thumbsDownBk = true;
@@ -228,7 +228,6 @@ let createDisplay = function () {
     }
 }
 
-
 let init = function () {
     let loadArr = []
     loadArr = JSON.parse(localStorage.getItem('search'))
@@ -236,7 +235,6 @@ let init = function () {
 }
 
 init()
-
 document.addEventListener('keydown', (event) => {
     const e = event || window.event;
     if (e.keyCode === 13) {
