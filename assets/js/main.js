@@ -82,7 +82,7 @@ let createDisplay = function () {
 
     //thumbs up icon
     let thumbsUpBook = document.createElement('i');
-    thumbsUpBook.setAttribute('class', 'fas fa-thumbs-up');
+    thumbsUpBook.setAttribute('class', 'fas fa-thumbs-up fa-lg');
 
     //book thumbs-down
     let bookDown = document.createElement('button');
@@ -92,7 +92,7 @@ let createDisplay = function () {
 
     //thumbs down icon
     let thumbsDownBook = document.createElement('i');
-    thumbsDownBook.setAttribute('class', 'fas fa-thumbs-down');
+    thumbsDownBook.setAttribute('class', 'fas fa-thumbs-down fa-lg');
 
     //book cover
     let bookCover = document.createElement('img');
@@ -141,7 +141,7 @@ let createDisplay = function () {
 
     //thumbs up icon
     let thumbsUpMovie = document.createElement('i');
-    thumbsUpMovie.setAttribute('class', 'fas fa-thumbs-up');
+    thumbsUpMovie.setAttribute('class', 'fas fa-thumbs-up fa-lg');
 
     //Movie thumbs-down
     let movieDown = document.createElement('button');
@@ -150,7 +150,7 @@ let createDisplay = function () {
 
     //                 //thumbs down icon
     let thumbsDownMovie = document.createElement('i');
-    thumbsDownMovie.setAttribute('class', 'fas fa-thumbs-down');
+    thumbsDownMovie.setAttribute('class', 'fas fa-thumbs-down fa-lg');
     thumbsDownMovie.setAttribute('alt', 'Thumbs down button icon.')
 
     //book cover
