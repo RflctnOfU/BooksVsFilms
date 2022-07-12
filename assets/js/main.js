@@ -225,7 +225,6 @@ let createDisplay = function () {
 let init = function () {
     let loadArr = []
     loadArr = JSON.parse(localStorage.getItem('search'))
-    console.log(loadArr)
 };
 
 init();
@@ -235,6 +234,6 @@ document.addEventListener('keydown', (event) => {
     if (e.keyCode === 13) {
         searchToApi()
     }
-})
+});
 //search to first function by clicking search button
 searchBtn.click(searchToApi)
