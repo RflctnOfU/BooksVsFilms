@@ -1,4 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 
 :root {
     --background-color: black;
@@ -57,9 +59,8 @@ body {
 }
 
 #search-bar-input {
-    width: 90%;
+    width: 100%;
     border-color: black;
-    margin-right: 5px;
 }
 
 #search-button {
@@ -79,13 +80,11 @@ body {
 
 }
 
-
 /* Dynamic HTML Table Section */
 .my-list {
     align-items: center;
     justify-content: center;
     display: flex;
-    background-color: black;
 }
 
 .my-list-img {
@@ -93,7 +92,8 @@ body {
     max-width: 12%;
 }
 
-.my-list-container {
+/* turn this back into a container  */
+.my-list-contaxiner {
     background-color: var(--background-color);
 }
 
@@ -203,48 +203,27 @@ body {
     border-top: solid 2px var(--dark-orange-glow);
     box-shadow: 0 0 10px 5px var(--dark-orange-glow);
     margin-top: 20px;
-    padding-bottom: 15px;
-}
-
-.github-link {
-    margin-bottom: 20px;
-}
-
-.fa-github {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--neon-blue);
-}
-
-.username {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    font-family: niveau-grotesk, sans-serif;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.fa-github:hover,
-.username:hover {
-    color: var(--neon-orange);
-    cursor: pointer;
 }
 
 .footer-text {
     text-align: center;
     font-family: niveau-grotesk, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: italic;
     color: var(--text-color);
 }
 
 .footer-subtext {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 5px;
 }
+
+.columns {
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+/* search bar design functionality */
 
 * {
     margin: 0;
@@ -260,12 +239,12 @@ body {
 
 .container {
     position: relative;
-    margin: 10px 10px;
-    top: 10px;
+    margin: auto;
+    top: 20%;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 250px;
+    width: 300px;
     height: 100px;
 }
 
@@ -278,7 +257,7 @@ body {
     left: 0;
     width: 80px;
     height: 80px;
-    background: rgb(240, 148, 9);
+    background: rgb(238, 175, 3);
     border-radius: 50%;
     transition: all 1s;
     z-index: 4;
@@ -339,7 +318,7 @@ body {
     height: 50px;
     outline: none;
     border: none;
-    background:var(--search-bar-blue);
+    background: rgb(217, 129, 13);
     color: white;
     text-shadow: 0 0 10px rgb(20, 167, 220);
     padding: 0 80px 0 20px;
@@ -364,8 +343,8 @@ body {
 }
 
 .container input:focus~.search {
-    right: -90%;
-    background: var(--neon-orange);
+    right: -100%;
+    background: #151515;
     z-index: 6;
 }
 
