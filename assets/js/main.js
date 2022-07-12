@@ -19,7 +19,7 @@ let searchToApi = function (e) {
 }
 //fetch function
 let getBookMovie = function (search) {
-    let booksUrl = 'http://openlibrary.org/search.json?q=' + search + '&limit=2&language:eng'
+    let booksUrl = 'https://openlibrary.org/search.json?q=' + search + '&limit=2&language:eng'
     let movieUrl = 'https://api.themoviedb.org/3/search/movie?api_key=6e44bae1ae373999e2237689e35e2f46&language=en-US&query=' + search + '&page=1&include_adult=false'
     fetch(booksUrl)
         .then(function (response) {
