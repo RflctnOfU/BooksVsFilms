@@ -239,12 +239,12 @@ body {
 
 .container {
     position: relative;
-    margin: auto;
+    margin-top: 2%;
     top: 20%;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 300px;
+    width: 90%;
     height: 100px;
 }
 
@@ -257,7 +257,7 @@ body {
     left: 0;
     width: 80px;
     height: 80px;
-    background: rgb(238, 175, 3);
+    background: var(--neon-blue);
     border-radius: 50%;
     transition: all 1s;
     z-index: 4;
@@ -318,12 +318,12 @@ body {
     height: 50px;
     outline: none;
     border: none;
-    background: rgb(217, 129, 13);
+    background: var(--dark-orange-glow);
     color: white;
     text-shadow: 0 0 10px rgb(20, 167, 220);
     padding: 0 80px 0 20px;
     border-radius: 30px;
-    box-shadow: 10 10 25px 0 rgb(14, 113, 152), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 25px 25px 25px 0px rgb(14, 113, 152), 10px 20px 25px 0 rgba(145, 29, 124, 0.2);
     /* box-shadow: 0 0 0px 8px var(--search-bar-blue); */
     transition: all 1s;
     opacity: 0;
@@ -344,7 +344,7 @@ body {
 
 .container input:focus~.search {
     right: -100%;
-    background: #151515;
+    background: var(--neon-orange);
     z-index: 6;
 }
 
@@ -373,4 +373,8 @@ body {
     font-weight: lighter;
     box-shadow: 0 0 5px 1px var(--search-bar-blue);
 
+}
+
+.box {
+    background-color: black;
 }
