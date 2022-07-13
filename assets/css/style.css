@@ -379,3 +379,29 @@ body {
 .box {
     background-color: black;
 }
+
+.fa-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-blue);
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.fa-github:hover,
+.username:hover {
+    color: var(--neon-orange);
+}
+
+.github-link {
+    margin-bottom: 20px;
+}
