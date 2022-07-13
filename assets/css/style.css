@@ -318,7 +318,7 @@ body {
     height: 50px;
     outline: none;
     border: none;
-    background: var(--dark-orange-glow);
+    background: var(--neon-blue);
     color: white;
     text-shadow: 0 0 10px rgb(20, 167, 220);
     padding: 0 80px 0 20px;
