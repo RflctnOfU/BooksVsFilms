@@ -87,125 +87,6 @@ body {
 
 }
 
-/* Dynamic HTML Table Section */
-.my-list {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.my-list-img {
-    min-width: 125px;
-    max-width: 12%;
-}
-
-/* turn this back into a mainSearch  */
-.my-list-container {
-    background-color: var(--background-color);
-}
-
-.my-list-rows {
-    background-color: var(--background-color);
-}
-
-.dynamic-col {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.versus-col {
-    margin: 10px 0px;
-}
-
-.coverImg,
-.posterImg {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.coverImg {
-    background-image: url(../images/orange-circle.png);
-    background-size: 100% 100%;
-    min-width: 420px;
-    max-width: 480px;
-    background-repeat: no-repeat;
-}
-
-.versus {
-    background-image: url(../images/vs-logo.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 180px;
-    height: 260px;
-}
-
-.posterImg {
-    background-image: url(../images/blue-circle.png);
-    background-size: 100% 100%;
-    min-width: 420px;
-    max-width: 480px;
-    background-repeat: no-repeat;
-}
-
-.book-cover,
-.movie-cover {
-    max-width: 180px;
-    max-height: 260px;
-    margin: 10px 0px;
-}
-
-.thumbs-up,
-.thumbs-down {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 20px;
-    border-radius: 20px;
-    border: solid 2px black;
-    background-color: white;
-}
-
-.thumbs-up:hover,
-.thumbs-down:hover {
-    background-color: lightgray;
-}
-
-.bookTitle,
-.bookPub {
-    color: var(--text-color);
-    font-family: niveau-grotesk, sans-serif;
-    font-size: 19px;
-    font-weight: 400;
-    font-style: italic;
-    justify-content: center;
-    align-content: center;
-    display: block;
-    text-shadow: 0px 3px 3px var(--neon-orange);
-}
-
-.movieTitle,
-.movieRelease {
-    color: var(--text-color);
-    font-family: niveau-grotesk, sans-serif;
-    font-size: 19px;
-    font-weight: 400;
-    font-style: italic;
-    justify-content: center;
-    align-content: center;
-    display: block;
-    text-shadow: 0px 3px 3px var(--neon-blue);
-}
-
-
-
 /* search bar design and functionality */
 
 .searchCard {
@@ -351,6 +232,127 @@ body {
     box-shadow: 0 0 5px 1px var(--search-bar-blue);
 
 }
+
+/* Dynamic HTML Table Section */
+.my-list {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.my-list-img {
+    min-width: 125px;
+    max-width: 12%;
+}
+
+/* turn this back into a container  */
+.my-list-container {
+    background-color: var(--background-color);
+}
+
+.my-list-rows {
+    background-color: var(--background-color);
+}
+
+.dynamic-col {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.versus-col {
+    margin: 10px 0px;
+}
+
+.coverImg,
+.posterImg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.coverImg {
+    background-image: url(../images/orange-circle.png);
+    background-size: 100% 100%;
+    min-width: 420px;
+    max-width: 480px;
+    background-repeat: no-repeat;
+}
+
+.versus {
+    background-image: url(../images/vs-logo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 260px;
+}
+
+.posterImg {
+    background-image: url(../images/blue-circle.png);
+    background-size: 100% 100%;
+    min-width: 420px;
+    max-width: 480px;
+    background-repeat: no-repeat;
+}
+
+.book-cover,
+.movie-cover {
+    max-width: 180px;
+    max-height: 260px;
+    margin: 10px 0px;
+}
+
+.thumbs-up,
+.thumbs-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 20px;
+    border: solid 2px black;
+    background-color: white;
+}
+
+.thumbs-up:hover,
+.thumbs-down:hover {
+    background-color: lightgray;
+}
+
+.bookTitle,
+.bookPub {
+    color: var(--text-color);
+    font-family: niveau-grotesk, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    justify-content: center;
+    align-content: center;
+    display: block;
+    text-shadow: 0px 3px 3px var(--neon-orange);
+}
+
+.movieTitle,
+.movieRelease {
+    color: var(--text-color);
+    font-family: niveau-grotesk, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    justify-content: center;
+    align-content: center;
+    display: block;
+    text-shadow: 0px 3px 3px var(--neon-blue);
+}
+
+
+
+
 
 /* footer */
 
